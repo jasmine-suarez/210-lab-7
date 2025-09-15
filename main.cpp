@@ -19,8 +19,12 @@ int main() {
     *(arr + 3) = "Emily";
     *(arr + 4) = "Jasmine";
 
+    cout << "Original array: ";
     displayArray(arr, SIZE);
-    reverseArray(arr, SIZE);
+
+    arr = reverseArray(arr, SIZE);
+    cout << "Reversed array: ";
+    displayArray(arr, SIZE);
 
     delete [] arr;
 
@@ -28,12 +32,22 @@ int main() {
 }
 
 void displayArray(string *arr, int SIZE) {
-    cout << "Original array: ";
     for (int i = 0; i < SIZE; i++) {
         cout << *(arr + i) << " ";
     }
+    cout << endl;
 }
 
 string *reverseArray(string *arr, int SIZE) {
+    int i = 0;
+    int j = SIZE - 1;
+    while (i < j) {
+        string temp = *(arr + i);
+        *(arr + i) = *(arr + j);
+        *(arr + j) = temp;
+
+        i++;
+        j--;
+    }
     return arr;
 }
