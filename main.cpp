@@ -6,7 +6,14 @@ using namespace std;
 
 const int SIZE = 5;
 
+// displayArray() outputs dynamic string array elements
+// arguments: pointer to dynamic array, num of elements
+// returns: nothing
 void displayArray(string *arr, int SIZE);
+
+// reverseArray() reverses the dynamic string array elements
+// arguments: pointer to dynamic array, num of elements
+// returns: reversed array
 string *reverseArray(string *arr, int SIZE);
 
 int main() {
